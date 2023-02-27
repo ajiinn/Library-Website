@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><i class="bi bi-collection-fill"></i>COMICATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/books">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/author">Author</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addauthor">Add author</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addbook">Add book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link glow-on-hover" href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container books">
+
+        <!-- <div class="book-card">
+          <img src="" alt="">
+        </div> -->
+
+        <div class="card">
+          <img src="https://imgs.search.brave.com/5rMYO7sMX5KV4tIOHKZ0hU7tCut2r0j4UmMFJmzoqvM/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4y/LnBlbmd1aW4uY29t/LmF1L2NvdmVycy9v/cmlnaW5hbC85Nzgx/NDAxMjM3MTEwLmpw/Zw"  alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Christopher Nolan</h5>
+            <p class="card-text ">Read Dark Knight</p>
+            <a href="#" class="btn btn-edit">Edit</a><a href="#" class="btn">Delete</a>
+          </div>
+        </div>
+
+        <div class="card" >
+          <img src="https://imgs.search.brave.com/6QviPPAayaK0m_3D9I_0jdbtYwp8Dx-XyHrCfd0eEx4/rs:fit:1200:1200:1/g:ce/aHR0cDovL21lZGlh/LmNvbWljYm9vay5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTIvMDUvTWFydmVs/Q29taWNzQXBwLmpw/Zw"  alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Marvel</h5>
+            <p class="card-text ">Marvel Comics</p>
+            <a href="#" class="btn btn-edit">Edit</a><a href="#" class="btn">Delete</a>
+          </div>
+        </div>
+
+        <div class="card" >
+          <img src="https://imgs.search.brave.com/dKHAk0yZCQqgEAugDHItGkao3qYamByJZdh0e2jlH2c/rs:fit:1200:1200:1/g:ce/aHR0cDovL3N0YXRp/YzMud2lraWEubm9j/b29raWUubmV0L19f/Y2IyMDA3MDgwODE1/MDkyMC9tYXJ2ZWxk/YXRhYmFzZS9pbWFn/ZXMvMi8yOC9YLU1l/bl9Wb2xfMl85Ny5q/cGc"  alt="...">
+          <div class="card-body">
+            <h5 class="card-title">X-men</h5>
+            <p class="card-text ">X men Apocalypse</p>
+            <a href="#" class="btn btn-edit">Edit</a><a href="#" class="btn">Delete</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgs.search.brave.com/7xrDnX8Kq6jM3MsAeupr5ZnAbB7CZycVVQmDUr6EzZU/rs:fit:982:1200:1/g:ce/aHR0cHM6Ly8xLmJw/LmJsb2dzcG90LmNv/bS8tallpSTUwV3g5/eE0vVUYtemdjSW9k/b0kvQUFBQUFBQUFI/aFUvTG82ZzFhRDRx/bTgvczE2MDAvU3Vw/ZXJtYW4rdjIrMTAy/LmpwZw" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">DC Comics</h5>
+            <p class="card-text ">Superman</p>
+            <a href="#" class="btn btn-edit">Edit</a><a href="#" class="btn">Delete</a>
+          </div>
+        </div>
+        
+
+        <!-- <div class="models-book-details"> -->
+          <%for(i=0;i<data.length;i++){%> 
+          <div class="card">
+            
+            <img src="/images/<%=data[i].book_img%>" class="card-img-top" alt="..."> 
+            <div class="card-body">
+              <h5 class="card-title"><%=data[i].author_name%></h5>
+              <p class="card-text "><%=data[i].book_title%></p>
+              <a href="/books/editbook/<%=data[i]._id%>" class="btn btn-edit">Edit</a><a href="/books/deletebook/<%=data[i]._id%>" class="btn">Delete</a>
+            </div>
+            
+          </div>
+          <%}%>
+        <!-- </div> -->
+      </div>
+
+      
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>

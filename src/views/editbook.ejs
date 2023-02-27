@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  }
+
+  .glow-on-hover {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: white;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+nav{
+    background-color: rgb(255, 255, 255);
+ 
+}
+.navbar-brand{
+  
+    color: #3d0030c2;
+    letter-spacing: -5px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+.navbar-brand i{
+  padding-right: 10px;
+}
+.nav-link{
+    color: #41003daa;
+    text-transform: uppercase;
+    margin: 0 20px;
+    font-size: 15px;
+    font-weight: lighter;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;    
+}
+.active{
+    color: #2e0022;
+    font-weight: 600; 
+}
+.nav-link:hover{
+    color: #2e0022;
+    transition: 0.2s;
+}
+.navbar-collapse{
+    justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 100%;
+  color: white;
+  margin-top: 110px;
+}
+.books{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-top: 80px;
+    /* padding-left: 20px;  */
+    color: black;
+}
+.books, .container:nth-child(1){
+  margin-top: 50px;
+}
+
+.books h2{
+    margin: 20px 20px;
+    padding: 10px 10px;
+    background-color: #ab007d60;
+    border-radius: 10px;
+}
+.books h2:hover{
+  background-color: #b7008681;
+}
+.container h1{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  line-height: 90px;
+  width:100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  height: 40%;
+  background-color: rgb(204 54 118 / 27%);
+  border: solid 1px rgb(204 54 118 / 27%);
+  text-transform: uppercase;
+  border-radius: 20px;
+  color: rgb(246, 219, 255);
+}
+.container h1:hover{
+  background-color: rgba(170, 46, 100, 0.27)
+}
+.container h1 i{
+  float: left;
+}
+
+.addbook{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.addbook form{
+    height: 100%;
+    width: 100%;
+}
+.register{
+  height: 550px;
+  width: 100%;
+  border: solid 1px #640049;
+  background-color: #6a004e56;
+  border-radius: 20px;
+  justify-content: center;
+}
+.register .input{
+  outline: none;
+  height: 50px;
+  width: 450px;
+  margin-bottom: 20px;
+  border: none;
+  color: white;
+  background-color: #2e002200;
+  border-bottom: 1px solid white;
+}
+.register .input::placeholder{
+  padding-left: 20px;
+  color: white;
+}
+.register form button{
+  height: 40px;
+  width: 150px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(117, 0, 117);
+  border: none;
+  border-radius: 20px;
+  transition: .2s;
+}
+.register form button:hover{
+  background-color: #2e0022;
+  color: white;
+}
+.register .input:nth-child(1){
+  margin-top: 50px;
+}
+
+.books .card{
+  height: 100%;
+  width: 300px;
+  float: left;
+  color: white;
+  border: #2e0022;
+  background-color: rgba(0, 0, 0, 0.584);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 10%;
+}
+.books .card:hover{
+  background-color: rgba(0, 0, 0, 0.488);
+  transition: 0.2s ease-in-out;
+}
+.books .card img{
+  height: 400px;
+  width: 300px;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 30%;
+}
+.books .card .card-text{
+  font-weight: 600;
+}
+.books .card a{
+  background-color: #b81929;
+  margin: 0 10px;
+  color: white;
+}
+.books .card .btn-edit{
+  background-color: #5482a2;
+}
+.models-book-details{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+@media (max-width:(1100px))
+{
+  .container h1{
+    height: 100%;
+    width: 100%;
+    margin-left: 150px;
+  }
+  body{
+    height: 100%;
+    width: 100%;
+  }
+  .books{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-top: 80px;
+    color: black;
+    margin-left: 200px;
+  }
+  .books .card img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 477px){
+  .register{
+    width: 100%;
+  }
+  .register .input{
+  height: 50px;
+  width: 300px;
+}
+.books{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  /* margin-left: 150px; */
+  color: black;
+}
+.books .card img{
+  height: 100%;
+  width: 100%;
+}
+}
+
+@media (max-width: 415px){
+
+  .register{
+    width: 100%;
+  }
+  .register .input{
+  height: 50px;
+  width: 300px;
+}
+.books{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  /* margin-left: 150px; */
+  color: black;
+}
+}
+
+@media (max-width: 850px){
+  body{
+    margin-left: 45px;
+
+  }
+  .register{
+    width: 100%;
+  }
+  .register .input{
+  height: 50px;
+  width: 300px;
+}
+.books{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  margin-top: -10px;
+  /* margin-left: 150px; */
+  color: black;
+}
+
+}
+
+
+@media (max-width: 350px){
+  .register{
+    width: 100%;
+  }
+  .register .input{
+  height: 50px;
+  width: 200px;
+}
+.books{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  /* margin-left: 150px; */
+  color: black;
+}
+.books .card img{
+  height: 100%;
+  width: 100%;
+}
+}
+
+
+
+    </style>
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><i class="bi bi-collection-fill"></i>COMICATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/books">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/author">Author</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addauthor">Add author</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/addbook">Add book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link glow-on-hover" href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container addbook">
+        <form action="/books/editbookform" method="get">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Edit</label>
+            <input type="file" name='book_img' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+            <div class="mb-3">
+              <input type="text" name="id" value="<%= editdata._id %>" style="display: none;">
+              <label for="exampleInputEmail1" class="form-label">Author Name</label>
+              <input type="text" name='author_name' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= editdata.author_name%>">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Book Title</label>
+              <input type="text" name='book_title' class="form-control" id="exampleInputPassword1" value="<%= editdata.book_title%>">
+            </div>
+         
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>
